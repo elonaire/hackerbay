@@ -1,7 +1,6 @@
 const jwt = require('jsonwebtoken');
 
 exports.user_login = (req,res,next)=>{
-  sess = req.session;
   let username = req.body.username;
   let password = req.body.password;
 
@@ -16,9 +15,13 @@ exports.user_login = (req,res,next)=>{
       }
     );
 
-    sess.token = token;
-    res.status(200).json({
-      message: "Login Successful! Welcome " + username
+    res.status(200)
+    .set({
+      Authorization: "Bearer " + token
+    })
+    .json({
+      message: "Login Successful! Welcome " + username,
+      token: token
     })
   }else{
     res.status(401).json("You must enter a valid username and password");
