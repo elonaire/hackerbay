@@ -24,9 +24,6 @@ app.use(session({
   secret: "hackerbayinterview"
 }));
 
-//variable to initialize sessions
-const sess = null;
-
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/jsonpatch', patchRouter);
@@ -40,7 +37,7 @@ app.use((req,res,next)=>{
 
 app.use((err,req,res,next)=>{
 	res.status(500).json({
-    message: "Internal server error: " + err
+    message: "Internal server error=> " + err
   });
 });
 

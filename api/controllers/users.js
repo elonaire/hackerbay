@@ -15,11 +15,11 @@ exports.user_login = (req,res,next)=>{
       }
     );
 
-    res.status(200)
-    .set({
-      Authorization: "Bearer " + token
-    })
-    .json({
+    let cookie = req.cookies._token;
+
+    res.cookie('_token', token, {maxAge: 180000});
+
+    res.status(200).json({
       message: "Login Successful! Welcome " + username,
       token: token
     })

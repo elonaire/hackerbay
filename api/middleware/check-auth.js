@@ -2,12 +2,13 @@ const jwt = require('jsonwebtoken');
 
 module.exports = (req,res,next)=>{
   try{
-    const token = req.headers['authorization'].split(" ")[1];
+    const token = req.cookies._token;
     const decoded = jwt.verify(token, "hackerbayinterview");
     next();
   }catch(error){
     return res.status(403).json({
-      message: "Forbidden Request"
+      message: "Forbidden Request",
+      error: error.message
     });
   }
 }
