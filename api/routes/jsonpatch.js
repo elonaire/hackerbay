@@ -1,28 +1,10 @@
 const express = require('express');
 const router = express.Router();
-const jsonpatch = require('jsonpatch');
 
-const checkAuth = require('../middleware/check-auth');
+const checkAuth = require('../middleware/check-auth');//middleware to protect route
 
-router.patch('/', checkAuth, (req,res,next)=>{
-  let jsonObj = req.body.obj;
-  let jsonPatchArray = [
-    {op: "replace", path: "/name", value: req.body.patchobj.name}
-  ];
+const patchController = require('../controllers/jsonpatch');
 
-  if (jsonObj && req.body.patchobj) {
-    let patchedObj = jsonpatch.apply_patch(jsonObj, jsonPatchArray);
-    res.status(200).json({
-      message: "Patch Successful",
-      jsonObj: jsonObj,
-      jsonPatchArray: jsonPatchArray,
-      patchedObj: patchedObj
-    });
-  }else{
-    res.status(400).json({
-      message: "Body must contain a JSON object and a JSON patch object"
-    })
-  }
-});
+router.patch('/', checkAuth, patchController.patch_obj);
 
 module.exports = router;

@@ -6,9 +6,8 @@ module.exports = (req,res,next)=>{
     const decoded = jwt.verify(token, "hackerbayinterview");
     next();
   }catch(error){
-    return res.status(403).json({
-      message: "Forbidden Request",
-      error: error.message
+    return res.status(401).json({
+      message: "Authentication Failed ! Login first!"
     });
   }
 }

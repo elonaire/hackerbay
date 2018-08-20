@@ -6,7 +6,6 @@ const logger = require('morgan');
 const bodyParser = require('body-parser');
 const session = require('express-session');
 
-const indexRouter = require('./api/routes/index');
 const usersRouter = require('./api/routes/users');
 const patchRouter = require('./api/routes/jsonpatch');
 const thumbnailRouter = require('./api/routes/thumbnails');
@@ -24,10 +23,9 @@ app.use(session({
   secret: "hackerbayinterview"
 }));
 
-app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/jsonpatch', patchRouter);
-app.use('/thumbnail', thumbnailRouter);
+app.use('/thumbnails', thumbnailRouter);
 
 app.use((req,res,next)=>{
 	res.status(404).json({
@@ -37,7 +35,7 @@ app.use((req,res,next)=>{
 
 app.use((err,req,res,next)=>{
 	res.status(500).json({
-    message: "Internal server error=> " + err
+    message: `Internal server error=> ${err}`
   });
 });
 

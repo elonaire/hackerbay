@@ -1,12 +1,12 @@
 const express = require('express');
 const router = express.Router();
 
+//middleware to protect route
 const checkAuth = require('../middleware/check-auth');
 
-router.post('/', checkAuth, (req,res,next)=>{
-  res.status(200).json({
-    message: "You can generate thumbnail"
-  });
-});
+//import controller
+const thumbnailsController = require('../controllers/thumbnails');
+
+router.post('/', checkAuth, thumbnailsController.create_thumbnail);
 
 module.exports = router;
