@@ -66,11 +66,11 @@
     <h2>Success Response</h2>
     <p>Code: 200</p>
     <p>Content: </p>
-    <code>
+    <pre>
       {
         "message": "Login Successful! Welcome ***your_username***"
       }
-    </code>
+    </pre>
   </li>
   
   <li>
