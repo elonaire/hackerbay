@@ -107,7 +107,7 @@
   
   <li>
     <h2>Request Body</h2>
-    <p>'obj' is the object to be patched and 'patchObj' is the patch. 'op' property of 'patchObj' represents patch operations and it accepts only three; add,remove, and replace. The 'key' and 'value' properties represent the key-value pair to be patched.</p>
+    <p>'obj' is the object to be patched and 'patchobj' is the patch. 'op' property of 'patchobj' represents patch operations and it accepts only three; add,remove, and replace. The 'key' and 'value' properties represent the key-value pair to be patched.</p>
     <pre>
       {
         "obj": {
