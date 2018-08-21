@@ -25,11 +25,11 @@
     <h2>Success Response</h2>
     <p>Code: 200</p>
     <p>Content: </p>
-    <code>
+    <pre>
       {
         message: "Welcome to Hackerbay. You may login."
       }
-    </code>
+    </pre>
   </li>
 </ul>
 
@@ -54,12 +54,12 @@
   
   <li>
     <h2>Request Body</h2>
-    <code>
+    <pre>
       {
         "username":"***your_username***",
         "password": "***your_password***"
       }
-    </code>
+    </pre>
   </li>
   
   <li>
@@ -77,11 +77,11 @@
     <h2>Error Response</h2>
     <p>Code: 401</p>
     <p>Content: </p>
-    <code>
+    <pre>
       {
         "message": "You must provide a valid username and password"
       }
-    </code>
+    </pre>
   </li>
 </ul>
 
@@ -108,7 +108,7 @@
   <li>
     <h2>Request Body</h2>
     <p>'obj' is the object to be patched and 'patchObj' is the patch. 'op' property of 'patchObj' represents patch operations and it accepts only three; add,remove, and replace. The 'key' and 'value' properties represent the key-value pair to be patched.</p>
-    <code>
+    <pre>
       {
         "obj": {
           "name": "Elon",
@@ -121,7 +121,7 @@
           "value": "Male"
         }
       }
-    </code>
+    </pre>
   </li>
   
   <li>
@@ -129,7 +129,7 @@
     <p>Successful Response comprises of the initial object, an array containing the patch</p>
     <p>Code: 200</p>
     <p>Content: </p>
-    <code>
+    <pre>
       {
           "message": "Patch Successful",
           "initialObj": {
@@ -150,26 +150,26 @@
               "gender": "Male"
           }
       }
-    </code>
+    </pre>
   </li>
   
   <li>
     <h2>Error Response</h2>
     <p>Code: 400</p>
     <p>Content: </p>
-    <code>
+    <pre>
       {
         "message": "You must provide a valid object and a patch"
       }
-    </code>
+    </pre>
     <h3>OR</h3>
     <p>Code: 401</p>
     <p>Content: </p>
-    <code>
+    <pre>
       {
         "message": "Authentication Failed ! Login first!"
       }
-    </code>
+    </pre>
   </li>
 </ul>
 
@@ -195,11 +195,11 @@
   <li>
     <h2>Request Body</h2>
     <p>Request body comprises of only the url to the image. N/B: File extensions are figured out by the controller assigned to this request.(Do not worry about file extensions)</p>
-    <code>
+    <pre>
       {
         "imgurl": "https://informationcradle.com/kenya/wp-content/uploads/2015/12/maureen-kunga.jpg"
       }
-    </code>
+    </pre>
   </li>
   
   <li>
@@ -207,30 +207,30 @@
     <p>Successful Response comprises of a unique name of the created thumbnail stored in thumbnails directory in the root folder.</p>
     <p>Code: 200</p>
     <p>Content: </p>
-    <code>
+    <pre>
       {
           "message": "Thumbnail created",
           "thumbnail": "c5c656a0-a457-11e8-bef4-a1dafa81ec9e.jpg"
       }
-    </code>
+    </pre>
   </li>
   
   <li>
     <h2>Error Response</h2>
     <p>Code: 400</p>
     <p>Content: </p>
-    <code>
+    <pre>
       {
         "message": "You must provide a valid image URL"
       }
-    </code>
+    </pre>
     <h3>OR</h3>
     <p>Code: 401</p>
     <p>Content: </p>
-    <code>
+    <pre>
       {
         "message": "Authentication Failed ! Login first!"
       }
-    </code>
+    </pre>
   </li>
 </ul>
