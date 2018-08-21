@@ -184,7 +184,7 @@
   
   <li>
     <h2>Method</h2>
-    <p>GET</p>
+    <p>POST</p>
   </li>
   
   <li>
