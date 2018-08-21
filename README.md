@@ -1,4 +1,8 @@
-<h1>Show Login page</h1>
+<h1>Login</h1>
+<p>Returns a login endpoint</p>
 <ul>
-  <li><h2>URL</h2></li>
+  <li>
+    <h2>URL</h2>
+    <p>/users/login</p>
+  </li>
 </ul>
