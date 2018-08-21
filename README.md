@@ -162,6 +162,14 @@
         "message": "You must provide a valid object and a patch"
       }
     </code>
+    <h2>OR</h2>
+    <p>Code: 401</p>
+    <p>Content: </p>
+    <code>
+      {
+        "message": "Authentication Failed ! Login first!"
+      }
+    </code>
   </li>
 </ul>
 
@@ -214,6 +222,14 @@
     <code>
       {
         "message": "You must provide a valid image URL"
+      }
+    </code>
+    <h2>OR</h2>
+    <p>Code: 401</p>
+    <p>Content: </p>
+    <code>
+      {
+        "message": "Authentication Failed ! Login first!"
       }
     </code>
   </li>
