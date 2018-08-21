@@ -5,22 +5,22 @@
     <h2>URL</h2>
     <p>/users/login</p>
   </li>
-  
+
   <li>
     <h2>Method</h2>
     <p>GET</p>
   </li>
-  
+
   <li>
     <h2>URL Params</h2>
     <p>None</p>
   </li>
-  
+
   <li>
     <h2>Data Params</h2>
     <p>None</p>
   </li>
-  
+
   <li>
     <h2>Success Response</h2>
     <p>Code: 200</p>
@@ -41,17 +41,17 @@
     <h2>URL</h2>
     <p>/users/login</p>
   </li>
-  
+
   <li>
     <h2>Method</h2>
     <p>POST</p>
   </li>
-  
+
   <li>
     <h2>URL Params</h2>
     <p>None</p>
   </li>
-  
+
   <li>
     <h2>Request Body</h2>
     <pre>
@@ -61,7 +61,7 @@
       }
     </pre>
   </li>
-  
+
   <li>
     <h2>Success Response</h2>
     <p>Code: 200</p>
@@ -72,7 +72,7 @@
       }
     </pre>
   </li>
-  
+
   <li>
     <h2>Error Response</h2>
     <p>Code: 401</p>
@@ -94,17 +94,17 @@
     <h2>URL</h2>
     <p>/jsonpatch</p>
   </li>
-  
+
   <li>
     <h2>Method</h2>
     <p>PATCH</p>
   </li>
-  
+
   <li>
     <h2>URL Params</h2>
     <p>None</p>
   </li>
-  
+
   <li>
     <h2>Request Body</h2>
     <p>'obj' is the object to be patched and 'patchobj' is the patch. 'op' property of 'patchobj' represents patch operations and it accepts only three; add,remove, and replace. The 'key' and 'value' properties represent the key-value pair to be patched.</p>
@@ -123,7 +123,7 @@
       }
     </pre>
   </li>
-  
+
   <li>
     <h2>Success Response</h2>
     <p>Successful Response comprises of the initial object, an array containing the patch</p>
@@ -152,7 +152,7 @@
       }
     </pre>
   </li>
-  
+
   <li>
     <h2>Error Response</h2>
     <p>Code: 400</p>
@@ -181,17 +181,17 @@
     <h2>URL</h2>
     <p>/thumbnails</p>
   </li>
-  
+
   <li>
     <h2>Method</h2>
-    <p>GET</p>
+    <p>POST</p>
   </li>
-  
+
   <li>
     <h2>URL Params</h2>
     <p>None</p>
   </li>
-  
+
   <li>
     <h2>Request Body</h2>
     <p>Request body comprises of only the url to the image. N/B: File extensions are figured out by the controller assigned to this request.(Do not worry about file extensions)</p>
@@ -201,7 +201,7 @@
       }
     </pre>
   </li>
-  
+
   <li>
     <h2>Success Response</h2>
     <p>Successful Response comprises of a unique name of the created thumbnail stored in thumbnails directory in the root folder.</p>
@@ -214,7 +214,7 @@
       }
     </pre>
   </li>
-  
+
   <li>
     <h2>Error Response</h2>
     <p>Code: 400</p>

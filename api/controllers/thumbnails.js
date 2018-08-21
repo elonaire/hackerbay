@@ -12,38 +12,45 @@ download.on('done', ()=>{
 
 exports.create_thumbnail = (req,res,next)=>{
   let url = req.body.imgurl;
-  let imgname = uuidv1();
 
-  //get MIME type from URL
-  let imgExtension = url.split(".").splice(-1, 1)[0];
-  console.log(imgExtension);
+  if (url !== undefined) {
+    let imgname = uuidv1();
 
-  //Set default MIME type to png if not found
-  if (imgExtension !=='jpg' && imgExtension !=='png' && imgExtension !=='jpeg') {
-    imgExtension = 'png';
+    //get MIME type from URL
+    let imgExtension = url.split(".").splice(-1, 1)[0];
+    console.log(imgExtension);
+
+    //Set default MIME type to png if not found
+    if (imgExtension !=='jpg' && imgExtension !=='png' && imgExtension !=='jpeg') {
+      imgExtension = 'png';
+    }
+
+    console.log("Downloading...");
+
+    jimp.read(url)
+    .then(result=>{
+      let img = result
+      .resize(50,50)
+      .write(`thumbnails/${imgname}.${imgExtension}`);
+
+      //emit done event
+      download.emit('done', (err)=>{
+        if (err) {
+          console.log("Download Failed!");
+        }
+      });
+
+      res.status(201).json({
+        message: "Thumbnail created",
+        thumbnail: `${imgname}.${imgExtension}`
+      });
+    })
+    .catch(err=>{
+      message: err
+    });
+  }else{
+    res.status(400).json({
+      message: "You must provide a valid image URL"
+    });
   }
-
-  console.log("Downloading...");
-
-  jimp.read(url)
-  .then(result=>{
-    let img = result
-    .resize(50,50)
-    .write(`thumbnails/${imgname}.${imgExtension}`);
-
-    //emit done event
-    download.emit('done', (err)=>{
-      if (err) {
-        console.log("Download Failed!");
-      }
-    });
-
-    res.status(201).json({
-      message: "Thumbnail created",
-      thumbnail: `${imgname}.${imgExtension}`
-    });
-  })
-  .catch(err=>{
-    message: err
-  });
 }
