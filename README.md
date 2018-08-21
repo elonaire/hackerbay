@@ -159,7 +159,7 @@
     <p>Content: </p>
     <pre>
       {
-        "message": "You must provide a valid object and a patch"
+        "message": "Body must contain a JSON object and a JSON patch object"
       }
     </pre>
     <h3>OR</h3>
