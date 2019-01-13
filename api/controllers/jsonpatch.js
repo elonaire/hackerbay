@@ -1,20 +1,22 @@
-const jsonpatch = require('jsonpatch');//module to enable patching JSON objects
+const jsonpatch = require('jsonpatch'); //module to enable patching JSON objects
 
-exports.patch_obj = (req,res,next)=>{
-  let initialObj = req.body.obj;//object to be patched
-  let patchObj = req.body.patchobj;//patch
+exports.patch_obj = (req, res, next) => {
+  let initialObj = req.body.obj; //object to be patched
+  let patchObj = req.body.patchobj; //patch
 
 
-  if (initialObj!== undefined && patchObj!== undefined) {
-    let jsonPatchArray = [
-      {op: patchObj.op, path: `/${patchObj.key}`, value: patchObj.value}
-    ];
+  if (initialObj !== undefined && patchObj !== undefined) {
+    let jsonPatchArray = [{
+      op: patchObj.op,
+      path: `/${patchObj.key}`,
+      value: patchObj.value
+    }];
 
-    if (patchObj.op!=='replace' && patchObj.op!=='add' && patchObj.op!=='remove') {
+    if (patchObj.op !== 'replace' && patchObj.op !== 'add' && patchObj.op !== 'remove') {
       res.status(400).json({
         message: "Only 'add', 'replace', and 'remove' are the accepted patch operations"
       });
-    }else {
+    } else {
       let patchedObj = jsonpatch.apply_patch(initialObj, jsonPatchArray);
       res.status(200).json({
         message: "Patch Successful",
@@ -23,7 +25,7 @@ exports.patch_obj = (req,res,next)=>{
         patchedObj: patchedObj
       });
     }
-  }else{
+  } else {
     res.status(400).json({
       message: "Body must contain a JSON object and a JSON patch object"
     })

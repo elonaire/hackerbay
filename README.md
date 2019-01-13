@@ -26,14 +26,17 @@
     <p>Code: 200</p>
     <p>Content: </p>
     <pre>
-      {
-        message: "Welcome to Hackerbay. You may login."
-      }
+      <code>
+        {
+          message: "Welcome to Hackerbay. You may login."
+        }
+      </code>
     </pre>
   </li>
 </ul>
 
 #second
+
 <h1>Login</h1>
 <p>Logs in a user by assigning a JWT</p>
 <ul>
@@ -85,8 +88,8 @@
   </li>
 </ul>
 
-
 #jsonpatch
+
 <h1>Patch JSON</h1>
 <p>Patches a JSON object</p>
 <ul>
@@ -174,6 +177,7 @@
 </ul>
 
 #thumbnail
+
 <h1>Create Thumbnail</h1>
 <p>Downloads an image from a url provided in a request body and resizes it into a 50X50 thumbnail</p>
 <ul>
