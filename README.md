@@ -1,9 +1,13 @@
+<h1>Base URI</h1>
+<p>https://elon-micro.herokuapp.com<p>
 <h1>GET Login</h1>
 <p>Returns a login endpoint</p>
 <ul>
   <li>
     <h2>URL</h2>
     <p>/users/login</p>
+    <i>Example request<i/>
+      <p>https://elon-micro.herokuapp.com/users/login<p>
   </li>
 
   <li>
@@ -43,6 +47,8 @@
   <li>
     <h2>URL</h2>
     <p>/users/login</p>
+    <i>Example request (POST Request)<i/>
+      <p>https://elon-micro.herokuapp.com/users/login<p>
   </li>
 
   <li>
